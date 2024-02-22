@@ -23,3 +23,18 @@ class MyApp extends StatefulWidget {
     );
   }
 }
+
+  static String decStringFromDouble(double f) {
+    return (f * ONE).toStringAsPrecision(PRECISION).split('.').first;
+  }
+
+//checking eye and application compatibility
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _bootstrap();
+    });
+  }
+
+
